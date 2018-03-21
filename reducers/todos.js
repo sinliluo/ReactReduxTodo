@@ -1,3 +1,4 @@
+import "babel-polyfill";
 const todos = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
@@ -10,10 +11,15 @@ const todos = (state = [], action) => {
                 }
             ];
         case 'TOGGLE_TODO':
-            return state.map(todo =>
-                (todo.id === action.id)
-                    ? {...todo, completed: !todo.completed}
-                    : todo
+            return state.map(todo => {
+                    if(action.id === todo.id) {
+                        // console.log(todo);
+                        return Object.assign({}, todo, {
+                            completed: !todo.completed,
+                        });
+                    }
+                    return todo
+                }
             );
         default:
             return state
