@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "react": "^15.3.0",
+    "react": "^15.3.0", // 最少需要15.3.0 要不然react-dom有问题
     "react-dom": "^15.0.1",
     "react-redux": "^5.0.7",
     "redux": "^3.5.2"
